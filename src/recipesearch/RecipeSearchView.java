@@ -51,8 +51,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
         setTitle(bundle.getString("Application.title")); // NOI18N
         setName("applicationFrame"); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-
         SearchRecipe.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         SearchRecipe.setText("Sök recept");
         SearchRecipe.addActionListener(new java.awt.event.ActionListener() {
