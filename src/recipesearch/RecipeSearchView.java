@@ -69,7 +69,7 @@ public class RecipeSearchView extends javax.swing.JFrame {
 
         jLabel2.setText("• Kök");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike" }));
 
         jLabel4.setText("• Huvudingrediens");
 
