@@ -51,6 +51,8 @@ public class RecipeSearchView extends javax.swing.JFrame {
         setTitle(bundle.getString("Application.title")); // NOI18N
         setName("applicationFrame"); // NOI18N
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
         SearchRecipe.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         SearchRecipe.setText("Sök recept");
         SearchRecipe.addActionListener(new java.awt.event.ActionListener() {
@@ -85,8 +87,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
 
         jSlider1.setMaximum(1000);
         jSlider1.setToolTipText("");
-
-        jTextField1.setText("100");
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jSlider1, org.jdesktop.beansbinding.ELProperty.create("${value}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
