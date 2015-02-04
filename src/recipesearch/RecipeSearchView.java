@@ -3,7 +3,8 @@ import java.util.List;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.SearchFilter;
-        /*
+ import java.awt.CardLayout;
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -296,8 +297,13 @@ public class RecipeSearchView extends javax.swing.JFrame {
         System.out.println(maxTime);
         System.out.println(maxPrice);
         
-        recipes = db.search(new SearchFilter(difficulty, 0, cuisine,0, mainIngredient));
-        System.out.println(recipes.get(0).getName());
+  
+        List<Recipe> recipes = db.search(new SearchFilter(difficulty, maxTime , cuisine , maxPrice, mainIngredient));
+       
+        for(int i=0;i<4;i++){
+        System.out.println(recipes.get(i).getPrice());
+        }
+        
     }//GEN-LAST:event_SearchActionPerformed
     
     
@@ -332,6 +338,7 @@ public class RecipeSearchView extends javax.swing.JFrame {
     private javax.swing.JSlider maxTimeSlider;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    private RecipeDatabase db = RecipeDatabase.getSharedInstance();
-    private List<Recipe> recipes; 
+    public RecipeDatabase db = RecipeDatabase.getSharedInstance();
+   // private List<Recipe> recipes; 
+    //public SearchFilter sf=;
 }
