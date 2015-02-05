@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package recipesearch;
+import java.awt.Color;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.SearchFilter;
@@ -33,7 +34,7 @@ public class FoodFactPanel extends javax.swing.JPanel {
         timeLabel.setText(Integer.toString(time));
     }
     public void setMatch(int match){
-        timeLabel.setText(Integer.toString(match));
+        matchLabel.setText(Integer.toString(match));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,18 +58,26 @@ public class FoodFactPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
+        });
 
         recipeNameLabel.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         recipeNameLabel.setText("recipe ..");
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel2.setText("Price:");
+        jLabel2.setText("Price (kr):");
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel3.setText("Difficulty:");
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel4.setText("Time:");
+        jLabel4.setText("Time (min):");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recipesearch/resources/recipe1.jpg"))); // NOI18N
 
@@ -148,6 +157,14 @@ public class FoodFactPanel extends javax.swing.JPanel {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+        this.setBackground(Color.red);
+    }//GEN-LAST:event_formMouseEntered
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        this.setBackground(Color.white);
+    }//GEN-LAST:event_formMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
