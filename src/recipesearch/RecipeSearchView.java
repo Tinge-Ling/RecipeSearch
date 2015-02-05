@@ -51,13 +51,9 @@ public class RecipeSearchView extends javax.swing.JFrame {
         mainIngredientBox = new javax.swing.JComboBox();
         jLabel14 = new javax.swing.JLabel();
         DetailPanel = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        SearchList = new javax.swing.JList();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         jLabel12 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -67,6 +63,14 @@ public class RecipeSearchView extends javax.swing.JFrame {
         SearchTime = new javax.swing.JLabel();
         SearchMIng = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        foodFactPanel2 = new recipesearch.FoodFactPanel();
+        foodFactPanel1 = new recipesearch.FoodFactPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -87,8 +91,10 @@ public class RecipeSearchView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("recipesearch/resources/RecipeSearch"); // NOI18N
         setTitle(bundle.getString("Application.title")); // NOI18N
+        setBackground(new java.awt.Color(255, 255, 255));
         setName("applicationFrame"); // NOI18N
 
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainPanel.setLayout(new java.awt.CardLayout());
 
         jLabel2.setText("• Kök");
@@ -169,11 +175,11 @@ public class RecipeSearchView extends javax.swing.JFrame {
         SearchPanelLayout.setHorizontalGroup(
             SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SearchPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addContainerGap()
                 .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SearchPanelLayout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 50, Short.MAX_VALUE))
+                        .addGap(0, 682, Short.MAX_VALUE))
                     .addGroup(SearchPanelLayout.createSequentialGroup()
                         .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -248,15 +254,10 @@ public class RecipeSearchView extends javax.swing.JFrame {
                                 .addComponent(jTextField1)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(maxPriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(590, Short.MAX_VALUE))
         );
 
         mainPanel.add(SearchPanel, "SearchPanel");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, new javax.swing.JComboBox(), org.jdesktop.beansbinding.ELProperty.create("${selectedItem}"), SearchList, org.jdesktop.beansbinding.BeanProperty.create("selectedElement"));
-        bindingGroup.addBinding(binding);
-
-        jScrollPane2.setViewportView(SearchList);
 
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel10.setText("Resultat:");
@@ -269,10 +270,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane4.setViewportView(jTextArea2);
 
         jLabel12.setText("1 av 100000");
 
@@ -302,48 +299,79 @@ public class RecipeSearchView extends javax.swing.JFrame {
 
         jLabel13.setText(",");
 
+        jLabel15.setText(",");
+
+        jLabel16.setText(",");
+
+        jLabel17.setText(",");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(foodFactPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(foodFactPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(foodFactPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(foodFactPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("DETALJER");
+        jScrollPane4.setViewportView(jTextArea2);
+
         javax.swing.GroupLayout DetailPanelLayout = new javax.swing.GroupLayout(DetailPanel);
         DetailPanel.setLayout(DetailPanelLayout);
         DetailPanelLayout.setHorizontalGroup(
             DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DetailPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DetailPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchDiff)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchCuis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(SearchMIng)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SearchPrice)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SearchTime))
                     .addGroup(DetailPanelLayout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(169, 169, 169)
                         .addComponent(jLabel12)
-                        .addGap(125, 125, 125)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DetailPanelLayout.createSequentialGroup()
-                        .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(DetailPanelLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, 0)
-                        .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DetailPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchDiff)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(searchCuis)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SearchPrice)
-                                .addGap(60, 60, 60)
-                                .addComponent(SearchTime)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SearchMIng)
-                                .addGap(0, 91, Short.MAX_VALUE))
-                            .addComponent(jScrollPane4))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetailPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                        .addGap(194, 194, 194)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(229, 229, 229))
+            .addGroup(DetailPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
         );
         DetailPanelLayout.setVerticalGroup(
             DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,17 +387,20 @@ public class RecipeSearchView extends javax.swing.JFrame {
                     .addComponent(SearchPrice)
                     .addComponent(SearchTime)
                     .addComponent(SearchMIng)
-                    .addComponent(jLabel13))
-                .addGap(34, 34, 34)
-                .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(DetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         mainPanel.add(DetailPanel, "DetailPanel");
@@ -453,11 +484,11 @@ public class RecipeSearchView extends javax.swing.JFrame {
   
         List<Recipe> recipes = db.search(new SearchFilter(difficulty, maxTime , cuisine , maxPrice, mainIngredient));
        
-        DefaultListModel listModel = new DefaultListModel();
-        for(int i=0;i<3;i++){
-            listModel.addElement(recipes.get(i).getName());
-            SearchList.setModel(listModel);
-        }
+       // DefaultListModel listModel = new DefaultListModel();
+       // for(int i=0;i<3;i++){
+        //    listModel.addElement(recipes.get(i).getName());
+        //    SearchList.setModel(listModel);
+       // }
         
         
         CardLayout card = (CardLayout)mainPanel.getLayout();
@@ -486,7 +517,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DetailPanel;
     private javax.swing.JButton Search;
-    private javax.swing.JList SearchList;
     private javax.swing.JLabel SearchMIng;
     private javax.swing.JPanel SearchPanel;
     private javax.swing.JLabel SearchPrice;
@@ -496,6 +526,8 @@ public class RecipeSearchView extends javax.swing.JFrame {
     private javax.swing.JComboBox difficultyBox;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
+    private recipesearch.FoodFactPanel foodFactPanel1;
+    private recipesearch.FoodFactPanel foodFactPanel2;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -506,6 +538,9 @@ public class RecipeSearchView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -515,8 +550,8 @@ public class RecipeSearchView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
