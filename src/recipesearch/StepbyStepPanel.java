@@ -29,12 +29,12 @@ public class StepbyStepPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         StepbyStepPanel = new javax.swing.JPanel();
-        descriptionLabel = new javax.swing.JLabel();
+        descriptionArea = new javax.swing.JTextArea();
 
         StepbyStepPanel.setBackground(new java.awt.Color(255, 255, 255));
-        StepbyStepPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Step by Step"));
 
-        descriptionLabel.setText("jLabel2");
+        descriptionArea.setColumns(20);
+        descriptionArea.setRows(5);
 
         javax.swing.GroupLayout StepbyStepPanelLayout = new javax.swing.GroupLayout(StepbyStepPanel);
         StepbyStepPanel.setLayout(StepbyStepPanelLayout);
@@ -42,15 +42,15 @@ public class StepbyStepPanel extends javax.swing.JPanel {
             StepbyStepPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StepbyStepPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(descriptionLabel)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addComponent(descriptionArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         StepbyStepPanelLayout.setVerticalGroup(
             StepbyStepPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StepbyStepPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(descriptionLabel)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addComponent(descriptionArea, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -69,11 +69,14 @@ public class StepbyStepPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     public void setDescription(String des){
-        descriptionLabel.setText(des);
+       descriptionArea.setText(des);
+       descriptionArea.setEditable(false);
+       descriptionArea.setLineWrap(true);
+       descriptionArea.setWrapStyleWord(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel StepbyStepPanel;
-    private javax.swing.JLabel descriptionLabel;
+    private javax.swing.JTextArea descriptionArea;
     // End of variables declaration//GEN-END:variables
 }
