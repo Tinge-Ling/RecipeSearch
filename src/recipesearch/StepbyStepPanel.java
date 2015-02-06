@@ -31,10 +31,13 @@ public class StepbyStepPanel extends javax.swing.JPanel {
         StepbyStepPanel = new javax.swing.JPanel();
         descriptionArea = new javax.swing.JTextArea();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         StepbyStepPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         descriptionArea.setColumns(20);
         descriptionArea.setRows(5);
+        descriptionArea.setBorder(null);
 
         javax.swing.GroupLayout StepbyStepPanelLayout = new javax.swing.GroupLayout(StepbyStepPanel);
         StepbyStepPanel.setLayout(StepbyStepPanelLayout);
